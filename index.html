@@ -124,29 +124,23 @@
                     </div>
                 </div>
 
-
                 <div class="p-2">
-                    <div class="form-group">
-                        <div class="form-row">
-                            <div class="col-6">
-                                <label for="cidade">Cidade</label>
-                                <input type="text" class="form-control" id="cidade" placeholder="Digite a cidade">
-                            </div>
-
-                            <div class="col-6">
-                                <label for="estado">Estado</label>
-                                <br>
-                                <select name="estado" class="form-cotrol">
-                                    <option value="" disabled selected>Escolha...</option>
-                                    <option value="sp">SP</option>
-                                    <option value="rj">RJ</option>
-                                    <option value="bh">BH</option>
-                                </select>
-                            </div>
-                        </div>
-
+                <div class="form-group row">
+                    <div class="col-7">
+                        <label for="cidUsuario">Cidade:</label>
+                        <input class="form-control" type="text" id="cidUsuario" name="cidUsuario"
+                            placeholder="Cidade">
+                    </div>
+                    <div class="col-5">
+                        <label for="estUsuario">Estado:</label>
+                        <select id="estUsuario" class="form-control">
+                            <option value="" disabled selected>Estados</option>
+                            <option value="SP">SP</option>
+                            <option value="RJ">RJ</option>
+                        </select>
                     </div>
                 </div>
+            </div>
 
                 <div class="p-2">
                     <div class="form-group row">
@@ -199,7 +193,7 @@
                         </div>
                         <div class="col-4">
                             <label for="Data de Validade">CCV</label>
-                            <input type="text" class="form-control" placeholder="CCV">
+                            <input type="text" class="form-control" placeholder="CCV" id="ccv">
                         </div>
                     </div>
 
@@ -224,15 +218,37 @@
 
                 <div class="p-2">
                     <div class="d-flex justify-content-end">
-                        <button type="button" class="btn btn-success">Finalizar Compra</button>
+                        <button type="button" data-toggle="modal" data-target="#compraFinalizada" class="btn btn-success" >Finalizar Compra</button>
+
                     </div>
                 </div>
 
             </div>
 
         </form>
+        
 
     </main>
+
+    <div id="compraFinalizada" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Compra Realizada com sucesso</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Parabéns pela sua compra</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Beleza</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
